@@ -1,6 +1,7 @@
 package com.web.todo.models;
 
-// import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
+@Table(name="user")
 public class User {
 
     public interface CreateUser {}
@@ -23,7 +27,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true)
+    @Column(name = "id_user", unique = true)
     private Long id;
 
     @Column(name = "username", length = 100, nullable = false, unique = true)
@@ -39,8 +43,17 @@ public class User {
     @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
     private String password;
 
-    // private List<Task> tasks = new ArrayList<Task>(); // Um usuário tem uma lista de tarefas para fazer
+    @OneToMany(mappedBy = "user")
+    private List<Task> tasks = new ArrayList<Task>();
     
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
     public User() {
     }
 
