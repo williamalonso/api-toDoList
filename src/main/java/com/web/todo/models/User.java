@@ -1,6 +1,6 @@
 package com.web.todo.models;
 
-import java.util.List;
+// import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
