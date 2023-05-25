@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.web.todo.models.User;
-import com.web.todo.repositories.TaskRepository;
 import com.web.todo.repositories.UserRepository;
 
 @Service
@@ -16,9 +15,6 @@ public class UserService {
 
   @Autowired
   private UserRepository userRepository;
-
-  @Autowired
-  private TaskRepository taskRepository;
 
   public User findById(Long id) {
     Optional<User> user = this.userRepository.findById(id);
@@ -31,7 +27,6 @@ public class UserService {
   public User create(User obj) {
     obj.setId(null);
     obj = this.userRepository.save(obj);
-    this.taskRepository.saveAll(obj.getTasks());
     return obj;
   }
 
