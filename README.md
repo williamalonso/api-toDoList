@@ -41,7 +41,7 @@ O sistema foi desenvolvido usando o Visual Studio Code e o Java versão `17.0.6`
 
 A versão do SpringBoot usada é a `2.7.10`.
 
-A versão do Mysql usada é a `8.0.30`.
+A versão do MysqlWorkbench usada é a `8.0.30`.
 
 Caso queira, clone ou faça o downlod desse repositório:
 
