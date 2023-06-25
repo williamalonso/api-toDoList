@@ -1,5 +1,6 @@
 package com.web.todo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -24,6 +25,13 @@ public class TaskService {
     return task.orElseThrow(() -> new RuntimeException(
       "Tarefa não encontrada! Id: " + id + ", Tipo: " + Task.class.getName()
     ));
+  }
+
+  // Busca todas as tasks de um usuário
+  public List<Task> findAllByUserId(Long userId) {
+    // o 'findByUser_Id' é o método criado no 'task repository'
+    List<Task> tasks = this.taskRepository.findByUser_Id(userId);
+    return tasks;
   }
 
   @Transactional
