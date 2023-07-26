@@ -2,10 +2,6 @@
     API ToDo List
 </h1>
 
-<div align="center">
-  <img src="https://github.com/williamalonso/api-todo-list/blob/master/src/main/resources/static/download.jpg" alt"Home Page" title="API ToDo List" width="400" />
-  
-
 ---
 
 </div>
@@ -14,7 +10,7 @@
 
 ### 🤔 Sobre o Sistema?
 
-É uma API para um projeto de ToDo List feito em SpringBoot onde o usuário pode cadastrar, atualizar e deletar suas listas de tarefas.
+É uma API feita em SpringBoot na qual você pode criar usuários e uma ou mais tarefas para cada usuário.
 
 ---
 
@@ -24,14 +20,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Java](https://www.oracle.com/java/)
 - [MySQL](https://www.mysql.com/)
+- [SpringBoot](https://spring.io/projects/spring-boot)
 
 ---
 
 ### ✨ Sobre a construção do projeto:
 
-- É possível cadastrar novas tarefas;
-- É possível atualizar novas tarefas;
-- É possível deletar novas tarefas;
+- É possível realizar um Crud de usuários;
+- É possível realizar um Crud de tarefas;
 
 ---
 
