@@ -46,8 +46,8 @@ public class UserController {
     return ResponseEntity.created(uri).build();
   }
 
-  @PutMapping("/{id}")
-  @Validated(UpdateUser.class)
+  @PutMapping("/{id}") // acionado quando uma requisição HTTP do tipo PUT for feita para o endpoint /user/{id}
+  @Validated(UpdateUser.class) // Essa linha serve para validar os dados do usuário antes de atualizar.
   public ResponseEntity<Void> update(@Valid @RequestBody User obj, @PathVariable Long id) {
     obj.setId(id);
     this.userService.update(obj);

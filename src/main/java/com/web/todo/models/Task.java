@@ -24,7 +24,7 @@ public class Task {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
 
     @Column(name = "description", length = 255, nullable = false)
